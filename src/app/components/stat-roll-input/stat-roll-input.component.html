@@ -1,0 +1,16 @@
+<p>stat-roll-input works!</p>
+<div *ngFor="let abilityScore of this.variableService.getVariablesWithProperty(AbilityScore)">
+    {{abilityScore.name}}
+    <input type="number" #y id="x" value="{{abilityScore.getValue()}}"
+        (input)="this.variableService.updateVariable(findVariableId(abilityScore.name.toString()), updateVariable(findVariableId(abilityScore.name.toString()), y.valueAsNumber))" />
+</div>
+<div *ngFor="let abilityScore of abilityScrores">
+    {{abilityScore.name}}
+    <input type="number" #y id="x" value="{{abilityScore.getValue()}}"
+        (input)="this.variableService.updateVariable(findVariableId(abilityScore.name.toString()), updateVariable(findVariableId(abilityScore.name.toString()), y.valueAsNumber))" />
+</div>
+<div *ngFor="let abilityModifier of this.variableService.getVariablesWithProperty(AbilityModifier)">
+    {{abilityModifier.name}}
+    {{abilityModifier.getValue()}}
+</div>
+{{this.variableService.log}}
